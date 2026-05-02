@@ -1,0 +1,21 @@
+{
+  "name": "civic-guide-backend",
+  "version": "1.0.0",
+  "description": "Production-ready backend for the Civic Guide Election Assistant",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js",
+    "deploy": "gcloud run deploy civic-guide-backend --source . --region asia-south1 --clear-base-image --set-env-vars \"GEMINI_API_KEY=${GEMINI_API_KEY},NEWS_API_KEY=${NEWS_API_KEY}\""
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0"
+  }
+}

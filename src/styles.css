@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;700&family=Libre+Baskerville:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Outfit", sans-serif;
+  --font-serif: "Libre Baskerville", serif;
+  
+  --color-primary: #1e3a8a; /* Deep Trust Blue */
+  --color-accent: #dc2626; /* Patriotic Red */
+  --color-warm-bg: #fdfbf7; /* Soft cream background */
+}
+
+body {
+  @apply bg-white text-slate-900 font-sans min-h-screen relative overflow-x-hidden;
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(255, 102, 0, 0.45) 0%, transparent 60%),
+    radial-gradient(circle at 100% 0%, rgba(0, 128, 0, 0.45) 0%, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(0, 100, 0, 0.3) 0%, transparent 60%),
+    radial-gradient(circle at 0% 100%, rgba(255, 69, 0, 0.3) 0%, transparent 60%),
+    #ffffff;
+  background-attachment: fixed;
+}
+
+h1, h2, h3 {
+  @apply font-heading tracking-tight;
+}
+
+@layer utilities {
+  .animate-in {
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  .fade-in {
+    animation-name: fade-in;
+  }
+  .slide-in-from-bottom-8 {
+    animation-name: slide-in-bottom-8;
+  }
+  .slide-in-from-bottom-12 {
+    animation-name: slide-in-bottom-12;
+  }
+  .slide-in-from-bottom-16 {
+    animation-name: slide-in-bottom-16;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-in-bottom-8 {
+  from { transform: translateY(2rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-in-bottom-12 {
+  from { transform: translateY(3rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slide-in-bottom-16 {
+  from { transform: translateY(4rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.step-card {
+  @apply transition-all duration-300;
+}
