@@ -8,6 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:api": "node backend/tests/api.test.js",
     "lint": "ng lint",
     "serve:ssr:app": "node dist/app/server/server.mjs"
   },
